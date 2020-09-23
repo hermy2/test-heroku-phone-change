@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phone Changer</title>
+    <title>CRM AXG</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <style>
@@ -62,12 +62,82 @@
         });
 
     </script>
+
+    <script>
+        $(function() {
+<<<<<<< HEAD
+            $("#getContractForm").submit(function(event) {
+=======
+            $("#phoneChangerForm").submit(function(event) {
+>>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
+                event.preventDefault();
+
+                var errorMessage = $("#errorMessage");
+                var error = $("#error");
+                error.hide();
+
+                $("#message").hide();
+
+<<<<<<< HEAD
+
+                $.ajax({
+                    url: event.target.action,
+                    method: event.target.method,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(data) {
+                        $("#name").val("");
+                        $("#product__c").val("");
+                        $("#messageMessage").text("Success!");
+                        $("#message").show();
+                    },
+                    error: function(err) {
+                        errorMessage.text(err.responseJSON.error);
+                        error.show();
+                    }
+                })
+                
+=======
+                var contractName = $("#name").val();
+                var productName = $("#product__c").val();
+
+                if (contractName.length == 0 || productName.length == 0) {
+                    errorMessage.text("All of the fields are required.");
+                    error.show();
+                }
+                else {
+                    $.ajax({
+                        url: event.target.action,
+                        method: event.target.method,
+                        data: JSON.stringify({
+                            contractName: contractName,
+                            productName: productName
+                        }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function(data) {
+                            $("#name").val("");
+                            $("#product__c").val("");
+                            $("#messageMessage").text("Success!");
+                            $("#message").show();
+                        },
+                        error: function(err) {
+                            errorMessage.text(err.responseJSON.error);
+                            error.show();
+                        }
+                    })
+                }
+>>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
+            });
+        });
+
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Phone Number Changer</a>
+                <a class="navbar-brand" href="/">Contact Information</a>
             </div>
         </div>
     </nav>
@@ -76,7 +146,7 @@
         <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Update Your Phone Number</h3>
+                    <h3 class="panel-title">Contact Information</h3>
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
@@ -106,7 +176,90 @@
                         <span class="sr-only">Error:</span>
                         <span id="errorMessage"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary">Update Phone Number</button>
+                    <button type="submit" class="btn btn-primary">Update Contact</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Contract Information</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+<<<<<<< HEAD
+        <form id="getContractForm" action="/getContracts" method="get" style="width: 400px">
+=======
+        <form id="getContractForm" action="/" method="get" style="width: 400px">
+>>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Contract List</h3>
+                </div>
+                <div class="panel-body">
+<<<<<<< HEAD
+=======
+                    <div class="form-group">
+                        <label for="contractName">Contract Name</label>
+                        <input type="text" class="form-control" id="contractName" placeholder="For verification" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productName">Product</label>
+                        <input type="text" class="form-control" id="productName" placeholder="For verification" required>
+                    </div>
+>>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
+                </div>
+                <div class="panel-footer">
+                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span id="messageMessage"></span>
+                    </div>
+                    <div id="error" class="alert alert-danger" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <span id="errorMessage"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Retrieve Contracts</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CRM AXG</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form id="getContractForm" action="/" method="get" style="width: 400px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Product List</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="contractName">Product Name</label>
+                        <input type="text" class="form-control" id="contractName" placeholder="For verification" required>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span id="messageMessage"></span>
+                    </div>
+                    <div id="error" class="alert alert-danger" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span>
+                        <span id="errorMessage"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Retrieve Products</button>
                 </div>
             </div>
         </form>
