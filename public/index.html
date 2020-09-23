@@ -81,6 +81,7 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
+                        console.log(data);
                         $("#name").val("");
                         $("#product__c").val("");
                         $("#messageMessage").text("Success!");
@@ -167,6 +168,14 @@
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageMessage"></span>
                     </div>
+                    
+                    <!-- display retrieve contracts results -->
+                    <Table>
+                        <tbody>
+                            <jS>data.foreach(d) => <tr>d.name</tr></jS>
+                        </tbody>
+                    </Table>
+
                     <div id="error" class="alert alert-danger" role="alert" style="display: none;">
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                         <span class="sr-only">Error:</span>
