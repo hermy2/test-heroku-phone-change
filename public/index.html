@@ -65,11 +65,7 @@
 
     <script>
         $(function() {
-<<<<<<< HEAD
             $("#getContractForm").submit(function(event) {
-=======
-            $("#phoneChangerForm").submit(function(event) {
->>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
                 event.preventDefault();
 
                 var errorMessage = $("#errorMessage");
@@ -78,7 +74,6 @@
 
                 $("#message").hide();
 
-<<<<<<< HEAD
 
                 $.ajax({
                     url: event.target.action,
@@ -97,37 +92,6 @@
                     }
                 })
                 
-=======
-                var contractName = $("#name").val();
-                var productName = $("#product__c").val();
-
-                if (contractName.length == 0 || productName.length == 0) {
-                    errorMessage.text("All of the fields are required.");
-                    error.show();
-                }
-                else {
-                    $.ajax({
-                        url: event.target.action,
-                        method: event.target.method,
-                        data: JSON.stringify({
-                            contractName: contractName,
-                            productName: productName
-                        }),
-                        contentType: "application/json; charset=utf-8",
-                        dataType: "json",
-                        success: function(data) {
-                            $("#name").val("");
-                            $("#product__c").val("");
-                            $("#messageMessage").text("Success!");
-                            $("#message").show();
-                        },
-                        error: function(err) {
-                            errorMessage.text(err.responseJSON.error);
-                            error.show();
-                        }
-                    })
-                }
->>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
             });
         });
 
@@ -191,27 +155,12 @@
     </nav>
 
     <div class="container">
-<<<<<<< HEAD
         <form id="getContractForm" action="/getContracts" method="get" style="width: 400px">
-=======
-        <form id="getContractForm" action="/" method="get" style="width: 400px">
->>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Contract List</h3>
                 </div>
                 <div class="panel-body">
-<<<<<<< HEAD
-=======
-                    <div class="form-group">
-                        <label for="contractName">Contract Name</label>
-                        <input type="text" class="form-control" id="contractName" placeholder="For verification" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="productName">Product</label>
-                        <input type="text" class="form-control" id="productName" placeholder="For verification" required>
-                    </div>
->>>>>>> 06c332e7324fc593736b6871736f7fe459cd1172
                 </div>
                 <div class="panel-footer">
                     <div id="message" class="alert alert-info" role="alert" style="display: none;">
