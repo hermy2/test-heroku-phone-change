@@ -42,6 +42,7 @@ app.post('/update', function(req, res) {
 });
 
 app.get('/getContracts', function(req, res) {
+
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
 
         // watch for any connect issues
@@ -49,13 +50,8 @@ app.get('/getContracts', function(req, res) {
             console.log(err);
             return;
         }
-        // conn.query(
-        //     'EXPORT salesforce.Contract SET Name = $1 WHERE Product__c = $2',
-        //     [re]
-        // )
 
-        conn.query('SELECT salesforce.Contract',
-        [req.body.name.trim(), req.body.product__c.trim()],
+        conn.query('SELECT Name,Product__c FROM Contract WHERE Product__c != null',
         function(err, result) {
             console.log(result)
             if (err) {
