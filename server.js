@@ -51,7 +51,7 @@ app.get('/getContracts', function(req, res) {
             return;
         }
 
-        conn.query('SELECT Name,Product__c FROM Contract WHERE Product__c != null',
+        conn.query('SELECT Name,Product__c FROM salesforce.Contract',
         function(err, result) {
             console.log(result)
             if (err) {
