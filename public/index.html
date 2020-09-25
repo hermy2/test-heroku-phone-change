@@ -81,10 +81,10 @@
                 $.ajax({
                     url: event.target.action,
                     method: event.target.method,
-                    data: JSON.stringify({
+                    /*data: JSON.stringify({
                         contractName: contractName,
                         productName: productName
-                    }),
+                    }), */
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
