@@ -74,8 +74,8 @@
 
                 $("#message").hide();
 
-                var contractName = $("#name").val();
-                var productName = $("#product__c").val();
+                //var contractName = $("#name").val();
+                //var productName = $("#product__c").val();
 
 
                 $.ajax({
@@ -89,8 +89,17 @@
                     dataType: "json",
                     success: function(data) {
                         console.log('#### sucessful data retrieve ' + data);
-                        $("#name").val("");
-                        $("#product__c").val("");
+                        var newRow = $("<tr>");
+                        var cols = "";
+                        //$("#name").val("");
+                        //$("#product__c").val("");
+                        var contractName = $("#name").val();
+                        var productName = $("#product__c").val();
+                        cols += '<td> ' + data.Name + '</td>';
+                        cols += '<td> ' + data.Product__c + '</td>';
+                        newRow.append(cols);
+                        $("#tableData.tbody").append(newRow);
+
                         $("#messageMessage").text("Success!");
                         $("#message").show();
                     },
@@ -176,10 +185,10 @@
                         <span id="messageMessage"></span>
                     </div>
 
-                    <pre> <jS>JSON.stringify(data)</jS> </pre>
+                    <!-- <pre> <jS>JSON.stringify(data)</jS> </pre> -->
                     <!-- display retrieve contracts result-->
-                    <Table>
-                        <tbody>
+                    <Table id="tableData" class="table table-fixed">
+                        <tbody class="tbody">
 
                             <jS>data.foreach(d) => <tr>d.Name</tr></jS> 
                         </tbody>
