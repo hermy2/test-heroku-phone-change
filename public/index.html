@@ -89,7 +89,8 @@
                     success: function(data) {
                         const parsedData = JSON.stringify(data)
                         console.log('#### sucessful data retrieve string' + parsedData);
-                        console.log('#### sucessful data retrieve parse' + JSON.parse(parsedData));
+                        console.log('#### sucessful data retrieve parse' + parsedData.rows[0].name);
+                        console.log('#### sucessful data retrieve parse' + parsedData.rows[0].product__c);
 
                         //let list = data.row;
 
@@ -103,8 +104,8 @@
                         //$("#product__c").val("");
                         var contractName = $("#name").val();
                         var productName = $("#product__c").val();
-                        cols += '<td> ' + data.Name + '</td>';
-                        cols += '<td> ' + data.Product__c + '</td>';
+                        cols += '<td> ' + parsedData.rows[0].name + '</td>';
+                        cols += '<td> ' + parsedData.rows[0].product__c + '</td>';
                         newRow.append(cols);
                         $("#tableData.tbody").append(newRow);
 
