@@ -59,8 +59,7 @@ app.get('/getContracts', function(req, res) {
             }
             else {
                 // Need to display 'Success!'
-                // res.json(result);
-                res.send(result.row);
+                res.json(result);
             }
         });
         
