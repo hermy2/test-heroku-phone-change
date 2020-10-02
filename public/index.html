@@ -87,8 +87,8 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
-                        const parsedData = JSON.parse(data)
-                        console.log('#### sucessful data retrieve string' + JSON.stringify(data));
+                        const parsedData = JSON.stringify(data)
+                        console.log('#### sucessful data retrieve string' + parsedData);
                         console.log('#### sucessful data retrieve parse' + JSON.parse(parsedData));
 
                         //let list = data.row;
