@@ -89,8 +89,8 @@
                     success: function(data) {
                         const parsedData = JSON.stringify(data)
                         console.log('#### sucessful data retrieve string' + parsedData);
-                        console.log('#### sucessful data retrieve string' + parseJSON(parsedData));
                         console.log('#### sucessful data retrieve string' + JSON.parse(parsedData));
+                        console.log('#### sucessful data retrieve string' + data.evalJSON(true));
                         console.log('#### sucessful data retrieve parse' + parsedData.rows[0].name);
                         console.log('#### sucessful data retrieve parse' + parsedData.rows[0].product__c);
 
