@@ -88,12 +88,13 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
-                        console.log('#### sucessful data retrieve ' + data.row);
-                        let list = data.row;
+                        console.log('#### sucessful data retrieve ' + data);
+                        //let list = data.row;
 
-                        list.map( r => {
+                        /*list.map( r => {
                             <h1>r.name</h1>
-                        } )
+                        } )*/
+
                         var newRow = $("<tr>");
                         var cols = "";
                         //$("#name").val("");
@@ -190,12 +191,10 @@
                         <span id="messageMessageProduct"></span>
                     </div>
 
-                    <!-- <pre> <jS>JSON.stringify(data)</jS> </pre> -->
                     <!-- display retrieve contracts result-->
                     <Table id="tableData" class="table table-fixed">
                         <tbody class="tbody">
 
-                            <jS>data.foreach(d) => <tr>d.Name</tr></jS> 
                         </tbody>
                     </Table>
 
