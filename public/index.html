@@ -87,7 +87,10 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
-                        console.log('#### sucessful data retrieve string' + data.d);
+                        const result = data.map(function(x) {
+                            return x.val;
+                          });
+                        console.log('#### sucessful data retrieve string' + result);
 
                         //let list = data.row;
 
