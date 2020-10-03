@@ -83,23 +83,26 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                         let list = data.rows[0].name;
-                         //let
-                         console.log('#### LIST ' +list);
+                         //let list = data.rows;
+                         //console.log('#### LIST ' +list);
+
+                         $.each(data.rows, function(row) {
+                            console.log('#### ROWS ' + row);
+                         });
 
                          /*list.map( r => {
                             <h1>r.name</h1>
                         } )*/
 
-                        //var newRow = $("<tr>");
-                        //var cols = "";
+                        var newRow = $("<tr>");
+                        var cols = "";
                        
-                        //var contractName = $("#name").val();
-                        //var productName = $("#product__c").val();
-                        //cols += '<td> ' + data.rows[0].name + '</td>';
-                        //cols += '<td> ' + data.rows[0].product__c + '</td>';
-                        //newRow.append(cols);
-                        //$("#panel tbody").append(newRow);
+                        var contractName = $("#name").val();
+                        var productName = $("#product__c").val();
+                        cols += '<td> ' + data.rows[0].name + '</td>';
+                        cols += '<td> ' + data.rows[0].product__c + '</td>';
+                        newRow.append(cols);
+                        $("#panel tbody").append(newRow);
 
                         $("#messageContract").text("Success!");
                         $("#messageC").show();
