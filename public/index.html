@@ -72,7 +72,7 @@
                 var error = $("#error");
                 error.hide();
 
-                $("#message").hide();
+                $("#messageC").hide();
 
                 //var contractName = $("#name").val();
                 //var productName = $("#product__c").val();
@@ -110,8 +110,8 @@
                         newRow.append(cols);
                         $("#panel tbody").append(newRow);
 
-                        $("#messageMessage p-footer").text("Success!");
-                        $("#message").show();
+                        $("#messageContract").text("Success!");
+                        $("#messageC").show();
                     },
                     error: function(err) {
                         errorMessage.text(err.responseJSON.error);
@@ -202,7 +202,7 @@
                     
                 </div>
                 <div id="p-footer" class="panel-footer">
-                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                    <div id="messageC" class="alert alert-info" role="alert" style="display: none;">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageContract"></span>
                     </div>
