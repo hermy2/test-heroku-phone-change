@@ -108,7 +108,7 @@
                         cols += '<td> ' + data.rows[0].name + '</td>';
                         cols += '<td> ' + data.rows[0].product__c + '</td>';
                         newRow.append(cols);
-                        $("#panel").append(newRow);
+                        $("#panel tbody").append(newRow);
 
                         $("#messageMessage").text("Success!");
                         $("#message").show();
