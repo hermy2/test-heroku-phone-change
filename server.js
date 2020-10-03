@@ -51,7 +51,7 @@ app.get('/getContracts', function(req, res) {
             return;
         }
 
-        conn.query('SELECT Name FROM salesforce.Contract WHERE product__c IN (SELECT Name FROM Salesforce.Product2) ',
+        conn.query('SELECT Name,Product__c FROM salesforce.Contract WHERE product__c IS NOT NULL',
         function(err, result) {
             console.log(result)
             if (err) {
