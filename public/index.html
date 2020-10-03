@@ -134,13 +134,13 @@
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
                         $.each(data.rows, function(index, row) {
-                            var nwRow = $("<tr>");
-                                var col = "";
+                            var newRow = $("<tr>");
+                                var cols = "";
                                
                                 var productName = $("#product__c").val();
-                                col += '<td> ' + row.product__c + '</td>';
-                                nwRow.append(col);
-                                $("#panel-product tbody-product").append(nwRow);
+                                cols += '<td> ' + row.product__c + '</td>';
+                                newRow.append(cols);
+                                $("#panel-product tbody-product").append(newRow);
                         });
 
                         $("#messageProduct").text("Success!");
