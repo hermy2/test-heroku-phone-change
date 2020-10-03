@@ -89,7 +89,8 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                        //let list = data.row;
+                        let list = data.rows[0];
+                        console.log(list);
 
                         /*list.map( r => {
                             <h1>r.name</h1>
