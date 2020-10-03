@@ -89,12 +89,12 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                        let list = data.rows[0].name;
+                        //let list = data.rows[0].name;
                         //let list = data.rows;
-                        console.log(list);
+                        //console.log(list);
 
-                        $('#panel tbody').html(list);
-                        console.log($('#panel'));
+                        //$('#panel tbody').html(list);
+                        //console.log($('#panel'));
                         /*list.map( r => {
                             <h1>r.name</h1>
                         } )*/
@@ -105,10 +105,10 @@
                         //$("#product__c").val("");
                         var contractName = $("#name").val();
                         var productName = $("#product__c").val();
-                        cols += '<td> ' + data.Name + '</td>';
-                        cols += '<td> ' + data.Product__c + '</td>';
+                        cols += '<td> ' + data.rows[0].name + '</td>';
+                        cols += '<td> ' + data.rows[0].product__c + '</td>';
                         newRow.append(cols);
-                        $("#tableData.tbody").append(newRow);
+                        $("#panel").append(newRow);
 
                         $("#messageMessage").text("Success!");
                         $("#message").show();
