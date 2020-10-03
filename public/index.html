@@ -74,35 +74,18 @@
 
                 $("#messageC").hide();
 
-                //var contractName = $("#name").val();
-                //var productName = $("#product__c").val();
-
                 $.ajax({
                     url: event.target.action,
                     method: event.target.method,
-                    /*data: JSON.stringify({
-                        contractName: contractName,
-                        productName: productName
-                    }), */
+                    
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                        //let list = data.rows[0].name;
-                        //let list = data.rows;
-                        //console.log(list);
-
-                        //$('#panel tbody').html(list);
-                        //console.log($('#panel'));
-                        /*list.map( r => {
-                            <h1>r.name</h1>
-                        } )*/
-
                         var newRow = $("<tr>");
                         var cols = "";
-                        //$("#name").val("");
-                        //$("#product__c").val("");
+                       
                         var contractName = $("#name").val();
                         var productName = $("#product__c").val();
                         cols += '<td> ' + data.rows[0].name + '</td>';
@@ -123,6 +106,49 @@
         });
 
     </script>
+
+    <script>
+        $(function() {
+            $("#getContractForm").submit(function(event) {
+                event.preventDefault();
+
+                var errorMessage = $("#errorMessage");
+                var error = $("#error");
+                error.hide();
+
+                $("#messageP").hide();
+
+                $.ajax({
+                    url: event.target.action,
+                    method: event.target.method,
+                    
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log('#### sucessful data retrieve string' + JSON.stringify(data));
+
+                        var newRow = $("<tr>");
+                        var cols = "";
+                       
+                        var productName = $("#product__c").val();
+                        cols += '<td> ' + data.rows[0].product__c + '</td>';
+                        newRow.append(cols);
+                        $("#panel-product tbody-product").append(newRow);
+
+                        $("#messageProduct").text("Success!");
+                        $("#messageP").show();
+                    },
+                    error: function(err) {
+                        errorMessage.text(err.responseJSON.error);
+                        error.show();
+                    }
+                })
+                
+            });
+        });
+
+    </script>
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -234,14 +260,19 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Product List</h3>
                 </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label for="contractName">Product Name</label>
-                        <input type="text" class="form-control" id="contractName" placeholder="For verification" required>
-                    </div>
+                <div id="panel-product" class="panel-body">
+                    <!-- display retrieve contracts result-->
+                    <table id="tableData" class="table table-fixed">
+                        <tbody class="tbody-product">
+                            <tr>
+                                <th>Product Name</th>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
                 <div class="panel-footer">
-                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                    <div id="messageP" class="alert alert-info" role="alert" style="display: none;">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageProduct"></span>
                     </div>
