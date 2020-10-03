@@ -84,10 +84,11 @@
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
                          let list = data.rows;
+                         console.log('#### LIST ' +list);
 
-                         list.map( r => {
+                         /*list.map( r => {
                             <h1>r.name</h1>
-                        });
+                        } )*/
 
                         //var newRow = $("<tr>");
                         //var cols = "";
@@ -97,7 +98,7 @@
                         //cols += '<td> ' + data.rows[0].name + '</td>';
                         //cols += '<td> ' + data.rows[0].product__c + '</td>';
                         //newRow.append(cols);
-                        $("#panel tbody").append(list);
+                        //$("#panel tbody").append(newRow);
 
                         $("#messageContract").text("Success!");
                         $("#messageC").show();
