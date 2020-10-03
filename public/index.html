@@ -89,7 +89,7 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                        //let list = data.rows[0].product__c;
+                        //let list = data.rows[0].name;
                         let list = data.rows;
                         console.log(list);
 
@@ -188,19 +188,19 @@
                     <h3 class="panel-title">Contract List</h3>
                 </div>
                 <div id="panel" class="panel-body">
-                </div>
-                <div class="panel-footer">
-                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
-                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                        <span id="messageContract"></span>
-                    </div>
-
                     <!-- display retrieve contracts result-->
                     <Table id="tableData" class="table table-fixed">
                         <tbody class="tbody">
 
                         </tbody>
                     </Table>
+
+                </div>
+                <div class="panel-footer">
+                    <div id="message" class="alert alert-info" role="alert" style="display: none;">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span id="messageContract"></span>
+                    </div>
 
                     <div id="error" class="alert alert-danger" role="alert" style="display: none;">
                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
