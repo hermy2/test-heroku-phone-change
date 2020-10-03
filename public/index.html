@@ -63,6 +63,7 @@
 
     </script>
 
+    <!-- CONTRACT LIST SCRIPT -->
     <script>
         $(function() {
             $("#getContractForm").submit(function(event) {
@@ -83,7 +84,7 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                         $.each(data.rows, function(row) {
+                         $.each(data.rows, function(index, row) {
                             console.log('#### ROWS ' + row);
 
                             var newRow = $("<tr>");
@@ -111,6 +112,7 @@
 
     </script>
 
+    <!-- PRODUCT LIST SCRIPT -->
     <script>
         $(function() {
             $("#getProductForm").submit(function(event) {
@@ -163,6 +165,7 @@
         </div>
     </nav>
 
+    <!-- CONTACT INFORMATION-->
     <div class="container">
         <form id="phoneChangerForm" action="/update" method="post" style="width: 400px">
             <div class="panel panel-default">
