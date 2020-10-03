@@ -89,10 +89,10 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                        let list = data.rows[0].name;
+                        let list = data.rows;
                         console.log(list);
 
-                        $('#panel').html('Contract Name ' + list);
+                        $('#panel').html('Contract Name ' +list);
                         console.log($('#panel'));
                         /*list.map( r => {
                             <h1>r.name</h1>
