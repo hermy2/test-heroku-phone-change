@@ -93,7 +93,7 @@
                         //let list = data.rows;
                         console.log(list);
 
-                        $('#p-footer').html(list);
+                        $('#panel tbody').html(list);
                         console.log($('#panel'));
                         /*list.map( r => {
                             <h1>r.name</h1>
@@ -183,14 +183,14 @@
 
     <div class="container">
         <form id="getContractForm" action="/getContracts" method="get" style="width: 400px">
-            <div class="panel panel-default">
+            <div id="panel" class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Contract List</h3>
                 </div>
-                <div id="panel" class="panel-body">
+                <div class="panel-body">
                     
                 </div>
-                <div id= "p-footer" class="panel-footer">
+                <div class="panel-footer">
                     <div id="message" class="alert alert-info" role="alert" style="display: none;">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                         <span id="messageContract"></span>
