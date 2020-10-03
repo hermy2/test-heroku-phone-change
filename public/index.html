@@ -83,15 +83,21 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                        var newRow = $("<tr>");
-                        var cols = "";
+                         let list = data.rows;
+
+                         list.map( r => {
+                            <h1>r.name</h1>
+                        });
+
+                        //var newRow = $("<tr>");
+                        //var cols = "";
                        
-                        var contractName = $("#name").val();
-                        var productName = $("#product__c").val();
-                        cols += '<td> ' + data.rows[0].name + '</td>';
-                        cols += '<td> ' + data.rows[0].product__c + '</td>';
-                        newRow.append(cols);
-                        $("#panel tbody").append(newRow);
+                        //var contractName = $("#name").val();
+                        //var productName = $("#product__c").val();
+                        //cols += '<td> ' + data.rows[0].name + '</td>';
+                        //cols += '<td> ' + data.rows[0].product__c + '</td>';
+                        //newRow.append(cols);
+                        $("#panel tbody").append(list);
 
                         $("#messageContract").text("Success!");
                         $("#messageC").show();
@@ -262,7 +268,7 @@
                 </div>
                 <div id="panel-product" class="panel-body">
                     <!-- display retrieve contracts result-->
-                    <table id="tableData" class="table table-fixed">
+                    <table id="tableData-product" class="table table-fixed-product">
                         <tbody class="tbody-product">
                             <tr>
                                 <th>Product Name</th>
