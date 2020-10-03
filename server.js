@@ -66,6 +66,31 @@ app.get('/getContracts', function(req, res) {
     });
 });
 
+app.get('/getProducts', function(req, res) {
+
+    pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
+
+        // watch for any connect issues
+        if (err) {
+            console.log(err);
+            return;
+        }
+
+        conn.query('SELECT Product__c FROM salesforce.Contract',
+        function(err, result) {
+            console.log(result)
+            if (err) {
+                res.status(400).json({error: err.message});
+            }
+            else {
+                // Need to display 'Success!'
+                res.json(result);
+            }
+        });
+        
+    });
+});
+
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });

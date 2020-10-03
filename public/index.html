@@ -109,7 +109,7 @@
 
     <script>
         $(function() {
-            $("#getContractForm").submit(function(event) {
+            $("#getProductForm").submit(function(event) {
                 event.preventDefault();
 
                 var errorMessage = $("#errorMessage");
@@ -255,7 +255,7 @@
 
     <!-- PRODUCT LIST-->
     <div class="container">
-        <form id="getContractForm" action="/" method="get" style="width: 400px">
+        <form id="getProductForm" action="/getProducts" method="get" style="width: 400px">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Product List</h3>
