@@ -83,7 +83,7 @@
                     success: function(data) {
                         console.log('#### sucessful data retrieve string' + JSON.stringify(data));
 
-                         let list = data.rows;
+                         let list = data.rows[0];
                          console.log('#### LIST ' +list);
 
                          /*list.map( r => {
