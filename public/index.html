@@ -95,7 +95,7 @@
                                 cols += '<td> ' + row.name + '</td>';
                                 cols += '<td> ' + row.product__c + '</td>';
                                 newRow.append(cols);
-                                $("#panel tbody").append(newRow);
+                                $("#panelc tbodyc").append(newRow);
                          });
 
                         $("#messageContract").text("Success!");
@@ -140,7 +140,7 @@
                                 var productName = $("#name").val();
                                 cols += '<td> ' + row.name + '</td>';
                                 newRow.append(cols);
-                                $("#panelP tbodyP").append(newRow);
+                                $("#panel tbody").append(newRow);
                         });
 
                         $("#messageProduct").text("Success!");
@@ -223,10 +223,10 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Contract List</h3>
                 </div>
-                <div id="panel" class="panel-body">
+                <div id="panelc" class="panel-body">
                     <!-- display retrieve contracts result-->
                     <table id="tableData" class="table table-fixed">
-                        <tbody class="tbody">
+                        <tbody class="tbodyc">
                             <tr>
                                 <th>Contract Name</th>
                                 <th>Product Name</th>
@@ -265,14 +265,14 @@
     <!-- PRODUCT LIST-->
     <div class="container">
         <form id="getProductForm" action="/getProducts" method="get" style="width: 400px">
-            <div class="panelP panel-default">
+            <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">Product List</h3>
                 </div>
-                <div id="panelP" class="panel-body">
+                <div id="panel" class="panel-body">
                     <!-- display retrieve contracts result-->
                     <table id="tableProduct" class="table fixed-product">
-                        <tbody class="tbodyP">
+                        <tbody class="tbody">
                             <tr>
                                 <th>Product Name</th>
                             </tr>
