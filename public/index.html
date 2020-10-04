@@ -95,7 +95,7 @@
                                 cols += '<td> ' + row.name + '</td>';
                                 cols += '<td> ' + row.product__c + '</td>';
                                 newRow.append(cols);
-                                $("#panelc tbodyc").append(newRow);
+                                $("#panel tbody").append(newRow);
                          });
 
                         $("#messageContract").text("Success!");
@@ -223,10 +223,10 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">Contract List</h3>
                 </div>
-                <div id="panelc" class="panel-body">
+                <div id="panel" class="panel-body">
                     <!-- display retrieve contracts result-->
                     <table id="tableData" class="table table-fixed">
-                        <tbody class="tbodyc">
+                        <tbody class="tbody">
                             <tr>
                                 <th>Contract Name</th>
                                 <th>Product Name</th>
