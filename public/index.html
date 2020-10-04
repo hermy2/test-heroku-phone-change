@@ -140,7 +140,7 @@
                                 var productName = $("#name").val();
                                 cols += '<td> ' + row.name + '</td>';
                                 newRow.append(cols);
-                                $("#panel tbody").append(newRow);
+                                $("#panel-success tbody").append(newRow);
                         });
 
                         $("#messageProduct").text("Success!");
@@ -265,7 +265,7 @@
     <!-- PRODUCT LIST-->
     <div class="container">
         <form id="getProductForm" action="/getProducts" method="get" style="width: 400px">
-            <div class="panel panel-default">
+            <div class="panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">Product List</h3>
                 </div>
