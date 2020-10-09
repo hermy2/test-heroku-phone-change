@@ -91,9 +91,9 @@
                                 var cols = "";
                                
                                 var contractName = $("#name").val();
-                                var productName = $("#product__c").val();
+                                var productName = $("#Product__r.Name").val();
                                 cols += '<td> ' + row.name + '</td>';
-                                cols += '<td> ' + row.product__c + '</td>';
+                                cols += '<td> ' + row.Product__r.Name + '</td>';
                                 newRow.append(cols);
                                 $("#tableData tbody").append(newRow);
                          });
