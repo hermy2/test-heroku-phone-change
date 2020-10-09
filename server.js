@@ -45,7 +45,7 @@ app.get('/getContracts', function(req, res) {
 
     pg.connect(process.env.DATABASE_URL, function (err, conn, done) {
 
-        // watch for any connect issues
+        // watch for any connect issues.
         if (err) {
             console.log(err);
             return;
