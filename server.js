@@ -76,7 +76,7 @@ app.get('/getProducts', function(req, res) {
             return;
         }
 
-        conn.query("SELECT Name FROM salesforce.Product2 Name LIKE '%Insurance%' ",
+        conn.query('SELECT Name FROM salesforce.Product2 Name LIKE \'%Insurance%\' ',
         function(err, result) {
             console.log(result)
             if (err) {
